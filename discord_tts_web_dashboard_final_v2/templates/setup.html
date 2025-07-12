@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn sử dụng - Discord TTS Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .back-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .guide-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .guide-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        
+        .guide-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        
+        .command-example {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .step-list {
+            counter-reset: step-counter;
+        }
+        
+        .step-list li {
+            counter-increment: step-counter;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #4CAF50;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning::before {
+            content: "⚠️ ";
+            font-weight: bold;
+        }
+        
+        .tip {
+            background: rgba(33, 150, 243, 0.2);
+            border: 1px solid #2196F3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .tip::before {
+            content: "💡 ";
+            font-weight: bold;
+        }
+        
+        .invite-btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .invite-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="/" class="back-btn">← Quay lại Dashboard</a>
+            <h1>📖 Hướng dẫn sử dụng Discord TTS Bot</h1>
+        </div>
+        
+        <div class="guide-section">
+            <h2>🚀 Bước 1: Thêm Bot vào Discord Server</h2>
+            <ol class="step-list">
+                <li>Nhấp vào nút "Thêm vào Discord" để mở liên kết mời bot</li>
+                <li>Đăng nhập vào Discord nếu chưa đăng nhập</li>
+                <li>Chọn server mà bạn muốn thêm bot (bạn phải có quyền quản trị server)</li>
+                <li>Cho phép các quyền mà bot yêu cầu</li>
+                <li>Nhấp "Authorize" để hoàn tất</li>
+            </ol>
+            
+            <a href="#" class="invite-btn" id="invite-btn">
+                ➕ Thêm Bot vào Discord
+            </a>
+            
+            <div class="warning">
+                Bạn cần có quyền "Manage Server" để thêm bot vào server Discord.
+            </div>
+        </div>
+        
+        <div class="guide-section">
+            <h2>🎯 Bước 2: Sử dụng Bot</h2>
+            
+            <h3>Các lệnh cơ bản:</h3>
+            
+            <h4>1. Vào voice channel</h4>
+            <div class="command-example">.ab</div>
+            <p>Bot sẽ tự động vào voice channel mà bạn đang tham gia.</p>
+            
+            <h4>2. Chuyển văn bản thành giọng nói</h4>
+            <div class="command-example">.at Xin chào mọi người!</div>
+            <p>Bot sẽ đọc văn bản "Xin chào mọi người!" bằng giọng nói tiếng Việt.</p>
+            
+            <h4>3. Rời khỏi voice channel</h4>
+            <div class="command-example">.leave</div>
+            <p>Bot sẽ rời khỏi voice channel hiện tại.</p>
+            
+            <h4>4. Hiển thị trợ giúp</h4>
+            <div class="command-example">.help</div>
+            <p>Bot sẽ hiển thị danh sách các lệnh có sẵn.</p>
+            
+            <div class="tip">
+                Bot sẽ tự động rời khỏi voice channel nếu không có ai trong channel trong 2 phút.
+            </div>
+        </div>
+        
+        <div class="guide-section">
+            <h2>💡 Mẹo sử dụng</h2>
+            
+            <h3>Văn bản hiệu quả:</h3>
+            <ul>
+                <li>Sử dụng câu ngắn, rõ ràng</li>
+                <li>Tránh từ viết tắt phức tạp</li>
+                <li>Tối đa 500 ký tự mỗi lần</li>
+                <li>Sử dụng dấu câu để tạo nhịp điệu tự nhiên</li>
+            </ul>
+            
+            <h3>Các trường hợp sử dụng phổ biến:</h3>
+            <ul>
+                <li>Đọc tin tức, bài viết</li>
+                <li>Hỗ trợ học tập</li>
+                <li>Giải trí trong voice chat</li>
+                <li>Hỗ trợ người khiếm thị</li>
+                <li>Tạo nội dung âm thanh</li>
+            </ul>
+            
+            <div class="warning">
+                Bot chỉ hỗ trợ tiếng Việt. Văn bản bằng ngôn ngữ khác có thể được phát âm không chính xác.
+            </div>
+        </div>
+        
+        <div class="guide-section">
+            <h2>🛠️ Khắc phục sự cố</h2>
+            
+            <h3>Bot không phản hồi:</h3>
+            <ul>
+                <li>Kiểm tra bot có online không (xem dashboard)</li>
+                <li>Đảm bảo bot có quyền "Send Messages" trong channel</li>
+                <li>Thử lại lệnh với dấu chấm (.) ở đầu</li>
+            </ul>
+            
+            <h3>Bot không vào voice channel:</h3>
+            <ul>
+                <li>Bạn phải ở trong voice channel trước khi gọi lệnh .ab</li>
+                <li>Đảm bảo bot có quyền "Connect" và "Speak" trong voice channel</li>
+                <li>Thử disconnect và connect lại voice channel</li>
+            </ul>
+            
+            <h3>Không nghe thấy âm thanh:</h3>
+            <ul>
+                <li>Kiểm tra volume của bot trong Discord</li>
+                <li>Đảm bảo bot không bị mute</li>
+                <li>Thử lệnh .leave và .ab để kết nối lại</li>
+            </ul>
+        </div>
+        
+        <div class="guide-section">
+            <h2>📞 Hỗ trợ</h2>
+            <p>Nếu bạn gặp vấn đề hoặc cần hỗ trợ, hãy liên hệ:</p>
+            <ul>
+                <li>Tham gia Discord server hỗ trợ</li>
+                <li>Tạo issue trên GitHub</li>
+                <li>Gửi email hỗ trợ</li>
+            </ul>
+            
+            <div class="tip">
+                Bot này hoàn toàn miễn phí và mã nguồn mở. Bạn có thể tự host bot nếu muốn.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function loadInviteUrl() {
+            fetch('/api/invite-url')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.invite_url) {
+                        document.getElementById('invite-btn').href = data.invite_url;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading invite URL:', error);
+                });
+        }
+        
+        loadInviteUrl();
+    </script>
+</body>
+</html>
